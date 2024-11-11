@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -7,25 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-// Serve the static files for the client
 app.use(express.static('public'));
-
-// io.on('connection', (socket) => {
-//   console.log('A user connected:', socket.id);
-
-//   // Relay signaling messages
-//   socket.on('signal', (data) => {
-//     console.log('Signal received:', data);
-//     // Send signal to the other connected clients
-//     socket.broadcast.emit('signal', data);
-//   });
-
-//   socket.on('disconnect', () => {
-//     console.log('A user disconnected:', socket.id);
-//   });
-// });
-
-
 
 io.on("connection", (socket) => {
   socket.on("sender-join",(data)=>{

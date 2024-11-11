@@ -7,8 +7,8 @@
       return `${Math.trunc(Math.random() * 999)}-${Math.trunc(Math.random() * 999)}-${Math.trunc(Math.random() * 999)}`;
     }
   
-    document.querySelector("#receiver-start-con-btn").addEventListener("click", function() {
-      sender_uid = document.querySelector("#join-id").value;
+    document.getElementById("receiver-start-con-btn").addEventListener("click",  ()=> {
+      sender_uid = document.getElementById("join-id").value;
       if (sender_uid.length == 0) {
         return;
       }
